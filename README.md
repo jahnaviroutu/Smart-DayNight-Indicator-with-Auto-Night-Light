@@ -19,18 +19,6 @@ Lights that have to be switched on and off by hand waste energy and are easy to 
 - SSD1306 OLED display (I2C)
 - LED
 
-## Circuit Diagram
-![Circuit Diagram](circuit-diagram.png)
-
-## Output
-**Daytime** (high brightness, LED off):
-
-![Daytime output](daytime.png)
-
-**Nighttime** (low brightness, LED on):
-
-![Nighttime output](nighttime.png)
-
 ## How it works
 1. The LDR's resistance changes with light: low in bright light, high in darkness. The sensor module turns this into a voltage on its analog output (AO) pin.
 2. The ESP32's ADC (Analog-to-Digital Converter) reads that voltage as a number from 0 to 4095 using `analogRead()`.
