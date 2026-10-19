@@ -28,10 +28,6 @@ void loop() {
   int raw = analogRead(LDR_PIN);
   int brightness = map(raw, 0, 4095, 100,0);
 
-  if (!HIGHER_MEANS_BRIGHTER) {
-    //brightness = 100 - brightness;
-  }
-
   bool isDark = brightness < DARK_THRESHOLD;
 
   display.clearDisplay();
@@ -55,7 +51,5 @@ void loop() {
   display.println("%");
 
   display.display();
-
-  //Serial.println("Raw: " + String(raw) + " | Brightness: " + String(brightness) + "% | Dark: " + String(isDark));
   delay(300);
 }
