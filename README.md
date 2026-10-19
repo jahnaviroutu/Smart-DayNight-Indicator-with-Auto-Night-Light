@@ -1,4 +1,3 @@
-# Smart-DayNight-Indicator-with-Auto-Night-Light
 # Smart Day/Night Indicator with Auto Night Light
 
 An ESP32 project that reads ambient light with an LDR (Light Dependent Resistor), shows **DAYTIME** or **NIGHTTIME** on an OLED display, and switches an LED on automatically when it gets dark, like a basic automatic night light.
