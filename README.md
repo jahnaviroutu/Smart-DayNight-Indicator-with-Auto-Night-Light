@@ -18,15 +18,6 @@ Lights that have to be switched on and off by hand waste energy and are easy to 
 - SSD1306 OLED display (I2C)
 - LED
 
-## How it works
-1. The LDR's resistance changes with light: low in bright light, high in darkness. The sensor module turns this into a voltage on its analog output (AO) pin.
-2. The ESP32's ADC (Analog-to-Digital Converter) reads that voltage as a number from 0 to 4095 using `analogRead()`.
-3. `map()` converts the 0–4095 reading into a 0–100% brightness value, so the threshold doesn't depend on the ADC range.
-4. If brightness is below `DARK_THRESHOLD`, the code decides it is night. The LED turns on and the OLED shows NIGHTTIME. Otherwise the LED is off and the OLED shows DAYTIME.
-5. The loop repeats every 300 ms, so the display and LED follow the light almost immediately.
-
-A `HIGHER_MEANS_BRIGHTER` setting in the code flips the scale, because some sensor modules read high in the dark and low in the light.
-
 ## Pin connections (ESP32)
 | Component     | Pin                              |
 |---------------|----------------------------------|
@@ -37,9 +28,17 @@ A `HIGHER_MEANS_BRIGHTER` setting in the code flips the scale, because some sens
 
 ![circuit diagram](https://github.com/jahnaviroutu/Smart-DayNight-Indicator-with-Auto-Night-Light/blob/3cbc75ca3066a490dde32b9361755b4104c1f2a5/Smart%20DayNight%20Indicator%20with%20Auto%20Night%20Light%20-Circuit.png)
 
+## How it works
+1. The LDR's resistance changes with light: low in bright light, high in darkness. The sensor module turns this into a voltage on its analog output (AO) pin.
+2. The ESP32's ADC (Analog-to-Digital Converter) reads that voltage as a number from 0 to 4095 using `analogRead()`.
+3. `map()` converts the 0–4095 reading into a 0–100% brightness value, so the threshold doesn't depend on the ADC range.
+4. If brightness is below `DARK_THRESHOLD`, the code decides it is night. The LED turns on and the OLED shows NIGHTTIME. Otherwise the LED is off and the OLED shows DAYTIME.
+5. The loop repeats every 300 ms, so the display and LED follow the light almost immediately.
+
+A `HIGHER_MEANS_BRIGHTER` setting in the code flips the scale, because some sensor modules read high in the dark and low in the light.
+
 
  
-
 ## New concepts I learned building this
 - **LDR (Light Dependent Resistor):** a sensor whose resistance changes with light, and how a voltage divider turns that change into a readable voltage
 - **ADC resolution:** why ESP32 reads 0–4095 (12-bit) while Arduino Uno reads 0–1023 (10-bit)
