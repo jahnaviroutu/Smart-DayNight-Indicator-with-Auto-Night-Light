@@ -35,7 +35,7 @@ A `HIGHER_MEANS_BRIGHTER` setting in the code flips the scale, because some sens
 | OLED SDA      | GPIO 22                          |
 | OLED SCL      | GPIO 23                          |
 
-[circuit diagram](https://github.com/jahnaviroutu/Smart-DayNight-Indicator-with-Auto-Night-Light/blob/3cbc75ca3066a490dde32b9361755b4104c1f2a5/Smart%20DayNight%20Indicator%20with%20Auto%20Night%20Light%20-Circuit.png)
+![circuit diagram](https://github.com/jahnaviroutu/Smart-DayNight-Indicator-with-Auto-Night-Light/blob/3cbc75ca3066a490dde32b9361755b4104c1f2a5/Smart%20DayNight%20Indicator%20with%20Auto%20Night%20Light%20-Circuit.png)
 
 
  
