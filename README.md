@@ -33,9 +33,13 @@ Lights that have to be switched on and off by hand waste energy and are easy to 
 2. The ESP32's ADC (Analog-to-Digital Converter) reads that voltage as a number from 0 to 4095 using `analogRead()`.
 3. `map()` converts the 0–4095 reading into a 0–100% brightness value, so the threshold doesn't depend on the ADC range.
 4. If brightness is below `DARK_THRESHOLD`, the code decides it is night. The LED turns on and the OLED shows NIGHTTIME
+
  ![smart-DayNight-Indicator-with-Auto-Night-Light](https://github.com/jahnaviroutu/Smart-DayNight-Indicator-with-Auto-Night-Light/blob/fa21ba65d19a7f876f371d512a81a2f2e5e31708/Smart%20DayNight%20Indicator%20with%20Auto%20Night%20Light-%20When%20It's%20NIGHTTIME.png)
+
 5.  Otherwise the LED is off and the OLED shows DAYTIME.
+
  ![smart-DayNight-Indicator-with-Auto-Night-Light](https://github.com/jahnaviroutu/Smart-DayNight-Indicator-with-Auto-Night-Light/blob/947032e683c39cb2993b09fab256f059d80518ce/Smart%20DayNight%20Indicator%20with%20Auto%20Night%20Light-%20When%20It's%20DAYTIME.png)
+
 6. The loop repeats every 300 ms, so the display and LED follow the light almost immediately.
 
 A `HIGHER_MEANS_BRIGHTER` setting in the code flips the scale, because some sensor modules read high in the dark and low in the light.
@@ -55,4 +59,4 @@ A `HIGHER_MEANS_BRIGHTER` setting in the code flips the scale, because some sens
 [Click here to run the simulation on Wokwi](https://wokwi.com/projects/478216393236856833)
 
 BY
-  Jahnavi Routu
+Jahnavi Routu
